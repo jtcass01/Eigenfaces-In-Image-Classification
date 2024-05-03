@@ -68,7 +68,7 @@ Section <a href="#amsterdam-dynamic-facial-expression-set">II</a> provides a des
 Section <a href="#model">III</a> introduces the model used for image classification including the mathematics of eigenfaces and SVMs.
 Section <a href="#model">IV</a> describes the implementation of a classification model using eigenfaces and SVMs with the Python programming language.
 Section  <a href="#analysis">V</a> presents analysis of the classification model including the efficacy of using eigenfaces in image classification.
-This paper concludes with a discussion of the results and future work in sections \ref<a href="#discussion">VI</a> and <a href="#future-work">VII</a> respectively.
+This paper concludes with a discussion of the results and future work in sections <a href="#discussion">VI</a> and <a href="#future-work">VII</a> respectively.
 
 ## Amsterdam Dynamic Facial Expression Set
 <!-- The ADFES dataset was developed by the University of Amsterdam's Amsterdam Interdisciplinary Centre for Emotion (AICE) \cite{adfes}.
