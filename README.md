@@ -44,13 +44,26 @@
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
-    <li><a href="#class-description">Class Description</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#amsterdam-dynamic-facial-expression-set">Amsterdam Dynamic Facial Expression Set</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#discussion">Discussion</a></li>
+    <li><a href="#future-work">Future Work</a></li>
+    <li><a href="#appendix">Appendix</a></li>
   </ol>
 </details>
 
+## Introduction
 
-## Class Description
-project_description
+## Amsterdam Dynamic Facial Expression Set
+
+## Analysis
+
+## Discussion
+
+## Future Work
+
+## Appendix
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
