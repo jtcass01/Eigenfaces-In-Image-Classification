@@ -1,0 +1,221 @@
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U5
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 20
+  - 4
+  - 8
+- !!binary |
+  QQAAAG4AAABnAAAAZQAAAHIAAAA=
+: f1-score: 0.0
+  precision: 0.0
+  recall: 0.0
+  support: 4.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U8
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 32
+  - 4
+  - 8
+- !!binary |
+  QwAAAG8AAABuAAAAdAAAAGUAAABtAAAAcAAAAHQAAAA=
+: f1-score: 0.3076923076923077
+  precision: 0.25
+  recall: 0.4
+  support: 5.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U7
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 28
+  - 4
+  - 8
+- !!binary |
+  RAAAAGkAAABzAAAAZwAAAHUAAABzAAAAdAAAAA==
+: f1-score: 0.0
+  precision: 0.0
+  recall: 0.0
+  support: 5.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U13
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 52
+  - 4
+  - 8
+- !!binary |
+  RQAAAG0AAABiAAAAYQAAAHIAAAByAAAAYQAAAHMAAABzAAAAbQAAAGUAAABuAAAAdAAAAA==
+: f1-score: 0.0
+  precision: 0.0
+  recall: 0.0
+  support: 4.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U4
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 16
+  - 4
+  - 8
+- !!binary |
+  RgAAAGUAAABhAAAAcgAAAA==
+: f1-score: 0.25
+  precision: 0.3333333333333333
+  recall: 0.2
+  support: 5.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U3
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 12
+  - 4
+  - 8
+- !!binary |
+  SgAAAG8AAAB5AAAA
+: f1-score: 0.3333333333333333
+  precision: 0.5
+  recall: 0.25
+  support: 4.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U7
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 28
+  - 4
+  - 8
+- !!binary |
+  TgAAAGUAAAB1AAAAdAAAAHIAAABhAAAAbAAAAA==
+: f1-score: 0.0
+  precision: 0.0
+  recall: 0.0
+  support: 5.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U5
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 20
+  - 4
+  - 8
+- !!binary |
+  UAAAAHIAAABpAAAAZAAAAGUAAAA=
+: f1-score: 0.3333333333333333
+  precision: 0.5
+  recall: 0.25
+  support: 4.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U7
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 28
+  - 4
+  - 8
+- !!binary |
+  UwAAAGEAAABkAAAAbgAAAGUAAABzAAAAcwAAAA==
+: f1-score: 0.30769230769230765
+  precision: 0.2222222222222222
+  recall: 0.5
+  support: 4.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U8
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 32
+  - 4
+  - 8
+- !!binary |
+  UwAAAHUAAAByAAAAcAAAAHIAAABpAAAAcwAAAGUAAAA=
+: f1-score: 0.0
+  precision: 0.0
+  recall: 0.0
+  support: 4.0
+accuracy: 0.1590909090909091
+macro avg:
+  f1-score: 0.1532051282051282
+  precision: 0.18055555555555552
+  recall: 0.16
+  support: 44.0
+weighted avg:
+  f1-score: 0.15195221445221443
+  precision: 0.1773989898989899
+  recall: 0.1590909090909091
+  support: 44.0

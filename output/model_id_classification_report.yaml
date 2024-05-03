@@ -1,0 +1,473 @@
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MQAAADEAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MQAAADIAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MQAAADMAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MQAAADcAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MQAAADkAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U1
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 4
+  - 4
+  - 8
+- !!binary |
+  MgAAAA==
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADEAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADIAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADUAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADYAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADcAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADgAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  MgAAADkAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U1
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 4
+  - 4
+  - 8
+- !!binary |
+  MwAAAA==
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U1
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 4
+  - 4
+  - 8
+- !!binary |
+  NAAAAA==
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  NAAAADIAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  NAAAADMAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  NAAAADQAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  NAAAADUAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U2
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 8
+  - 4
+  - 8
+- !!binary |
+  NAAAADYAAAA=
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U1
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 4
+  - 4
+  - 8
+- !!binary |
+  NgAAAA==
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U1
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 4
+  - 4
+  - 8
+- !!binary |
+  OAAAAA==
+: f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 2.0
+accuracy: 1.0
+macro avg:
+  f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 44.0
+weighted avg:
+  f1-score: 1.0
+  precision: 1.0
+  recall: 1.0
+  support: 44.0

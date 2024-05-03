@@ -1,0 +1,53 @@
+accuracy: 0.9545454545454546
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U6
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 24
+  - 4
+  - 8
+- !!binary |
+  ZgAAAGUAAABtAAAAYQAAAGwAAABlAAAA
+: f1-score: 0.9523809523809523
+  precision: 0.9090909090909091
+  recall: 1.0
+  support: 20.0
+macro avg:
+  f1-score: 0.9544513457556936
+  precision: 0.9545454545454546
+  recall: 0.9583333333333333
+  support: 44.0
+? !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - U4
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - 16
+  - 4
+  - 8
+- !!binary |
+  bQAAAGEAAABsAAAAZQAAAA==
+: f1-score: 0.9565217391304348
+  precision: 1.0
+  recall: 0.9166666666666666
+  support: 24.0
+weighted avg:
+  f1-score: 0.9546395633352156
+  precision: 0.9586776859504131
+  recall: 0.9545454545454546
+  support: 44.0

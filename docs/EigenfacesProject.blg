@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: EigenfacesProject.aux
+The style file: new-aiaa.bst
+Database file #1: eigenfaces.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 14 entries,
+            3319 wiz_defined-function locations,
+            763 strings with 7919 characters,
+and the built_in function-call counts, 7867 in all, are:
+= -- 592
+> -- 246
+< -- 32
++ -- 104
+- -- 75
+* -- 633
+:= -- 1092
+add.period$ -- 34
+call.type$ -- 14
+change.case$ -- 56
+chr.to.int$ -- 15
+cite$ -- 14
+duplicate$ -- 682
+empty$ -- 629
+format.name$ -- 118
+if$ -- 1592
+int.to.chr$ -- 1
+int.to.str$ -- 15
+missing$ -- 118
+newline$ -- 58
+num.names$ -- 42
+pop$ -- 244
+preamble$ -- 1
+purify$ -- 56
+quote$ -- 0
+skip$ -- 264
+stack$ -- 0
+substring$ -- 399
+swap$ -- 417
+text.length$ -- 23
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 84
+warning$ -- 0
+while$ -- 52
+width$ -- 0
+write$ -- 165

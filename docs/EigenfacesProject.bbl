@@ -1,0 +1,88 @@
+\begin{thebibliography}{14}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{\discretionary{}{}{}https://doi.org/#1}\else
+  \providecommand{\doi}[1]{\discretionary{}{}{}\urlstyle{rm}\url{https://doi.org/#1}}\fi
+
+\bibitem[{Abdi and Williams(2010)}]{abdi2010principal}
+Abdi, H., and Williams, L.~J., \enquote{Principal component analysis,}
+  \emph{Wiley interdisciplinary reviews: computational statistics}, Vol.~2,
+  No.~4, 2010, pp. 433--459.
+
+\bibitem[{Turk and Pentland(1991)}]{turk1991face}
+Turk, M.~A., and Pentland, A.~P., \enquote{Face recognition using eigenfaces,}
+  \emph{Proceedings. 1991 IEEE computer society conference on computer vision
+  and pattern recognition}, IEEE Computer Society, 1991, pp. 586--587.
+
+\bibitem[{Hearst et~al.(1998)Hearst, Dumais, Osuna, Platt, and
+  Scholkopf}]{708428}
+Hearst, M., Dumais, S., Osuna, E., Platt, J., and Scholkopf, B.,
+  \enquote{Support vector machines,} \emph{IEEE Intelligent Systems and their
+  Applications}, Vol.~13, No.~4, 1998, pp. 18--28.
+\newblock \doi{10.1109/5254.708428}.
+
+\bibitem[{Mangasarian and Wild(2005)}]{mangasarian2005multisurface}
+Mangasarian, O.~L., and Wild, E.~W., \enquote{Multisurface proximal support
+  vector machine classification via generalized eigenvalues,} \emph{IEEE
+  transactions on pattern analysis and machine intelligence}, Vol.~28, No.~1,
+  2005, pp. 69--74.
+
+\bibitem[{Alvarez et~al.(2009)Alvarez, G{\'o}rriz, Ram{\'\i}rez,
+  Salas-Gonzalez, L{\'o}pez, Segovia, Puntonet, and
+  Prieto}]{alvarez2009alzheimer}
+Alvarez, I., G{\'o}rriz, J.~M., Ram{\'\i}rez, J., Salas-Gonzalez, D.,
+  L{\'o}pez, M., Segovia, F., Puntonet, C.~G., and Prieto, B.,
+  \enquote{Alzheimer's diagnosis using eigenbrains and support vector
+  machines,} \emph{Bio-Inspired Systems: Computational and Ambient
+  Intelligence: 10th International Work-Conference on Artificial Neural
+  Networks, IWANN 2009, Salamanca, Spain, June 10-12, 2009. Proceedings, Part I
+  10}, Springer, 2009, pp. 973--980.
+
+\bibitem[{Meli{\v{s}}ek and Pavlovicov{\'a}(2008)}]{melivsek2008support}
+Meli{\v{s}}ek, J.~M., and Pavlovicov{\'a}, M.~O., \enquote{Support vector
+  machines, PCA and LDA in face recognition,} \emph{J. Electr. Eng}, Vol.~59,
+  No. 203-209, 2008, p.~1.
+
+\bibitem[{van~der Schalk et~al.(2011)van~der Schalk, Hawk, Fischer, and
+  Doosje}]{adfes}
+van~der Schalk, J., Hawk, S.~T., Fischer, A.~H., and Doosje, B.,
+  \enquote{Moving faces, looking places: Validation of the Amsterdam Dynamic
+  Facial Expression Set (ADFES),} \emph{Emotion}, Vol.~11, No.~4, 2011, pp.
+  907--920.
+\newblock \doi{10.1037/a0023853}.
+
+\bibitem[{{NumFOCUS, Inc.}(2024)}]{pandas}
+{NumFOCUS, Inc.}, \enquote{pandas,} , 2024.
+\newblock \urlprefix\url{https://pandas.pydata.org/}.
+
+\bibitem[{{scikit-learn Development Team}(2024)}]{scikit-learn}
+{scikit-learn Development Team}, \enquote{scikit-learn,} , 2024.
+\newblock \urlprefix\url{https://scikit-learn.org/stable/}.
+
+\bibitem[{Halko et~al.(2011)Halko, Martinsson, and Tropp}]{halko2011finding}
+Halko, N., Martinsson, P.-G., and Tropp, J.~A., \enquote{Finding structure with
+  randomness: Probabilistic algorithms for constructing approximate matrix
+  decompositions,} \emph{SIAM review}, Vol.~53, No.~2, 2011, pp. 217--288.
+
+\bibitem[{Maharana et~al.(2022)Maharana, Mondal, and
+  Nemade}]{maharana2022review}
+Maharana, K., Mondal, S., and Nemade, B., \enquote{A review: Data
+  pre-processing and data augmentation techniques,} \emph{Global Transitions
+  Proceedings}, Vol.~3, No.~1, 2022, pp. 91--99.
+
+\bibitem[{Zou and Schiebinger(2018)}]{zou2018ai}
+Zou, J., and Schiebinger, L., \enquote{AI can be sexist and racist—it's time
+  to make it fair,} , 2018.
+
+\bibitem[{{NumPy Development Team}(2024)}]{numpy}
+{NumPy Development Team}, \enquote{NumPy,} , 2024.
+\newblock \urlprefix\url{https://numpy.org/}.
+
+\bibitem[{{Matplotlib Development Team}(2024)}]{matplotlib}
+{Matplotlib Development Team}, \enquote{matplotlib,} , 2024.
+\newblock \urlprefix\url{https://matplotlib.org/}.
+
+\end{thebibliography}

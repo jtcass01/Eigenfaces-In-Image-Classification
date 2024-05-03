@@ -2,7 +2,7 @@
 *** REFERENCE: https://github.com/othneildrew/Best-README-Template
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, class_name, class_code, repo_name, email, project_description, linkedin_url
+*** Eigenfaces-In-Image-Classification, class_name, class_code, repo_name, email, project_description, linkedin_url
 -->
 
 
@@ -18,19 +18,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/Eigenfaces-In-Image-Classification/repo_name">
     <img src="Figures/JHU_LOGO.png" alt="Logo">
   </a>
 
-  <h3 align="center">class_name</h3>
+  <h3 align="center">A Study On The Efficacy of Using Eigenfaces In Image Classification</h3>
 
   <p align="center">
-    class_code
+    The increased use of image classification in technology today has incited a rise in research and development for new approaches in facial detection and identification models. 
+    Two common problems in image classification are storing large datasets and model training costs.
+    One approach to achieving dimensionality reduction while maintaining performance is Principal Component Analysis where a subset of eigenvectors, also known in the domain of facial detection as ``eigenfaces'', are used to represent the data in a lower dimensionality space.
+    This paper presents an image classification model based on eigenfaces and support vector machines using the Amsterdam Dynamic Facial Expression Set (ADFES) dataset. 
+    Implementation of an image classification model is described, and performance analysis of the model is presented with a focus on the efficacy of using eigenfaces when training the model.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the Repository »</strong></a>
+    <a href="https://github.com/Eigenfaces-In-Image-Classification/repo_name"><strong>Explore the Repository »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/Eigenfaces-In-Image-Classification/repo_name/issues">Report Bug</a>
   </p>
 </p>
 
@@ -50,15 +54,15 @@ project_description
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Eigenfaces-In-Image-Classification/repo_name.svg?style=for-the-badge
+[contributors-url]: https://github.com/Eigenfaces-In-Image-Classification/repo_name/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Eigenfaces-In-Image-Classification/repo_name.svg?style=for-the-badge
+[forks-url]: https://github.com/Eigenfaces-In-Image-Classification/repo_name/network/members
+[stars-shield]: https://img.shields.io/github/stars/Eigenfaces-In-Image-Classification/repo_name.svg?style=for-the-badge
+[stars-url]: https://github.com/Eigenfaces-In-Image-Classification/repo_name/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Eigenfaces-In-Image-Classification/repo_name.svg?style=for-the-badge
+[issues-url]: https://github.com/Eigenfaces-In-Image-Classification/repo_name/issues
+[license-shield]: https://img.shields.io/github/license/Eigenfaces-In-Image-Classification/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/Eigenfaces-In-Image-Classification/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: linkedin_url
