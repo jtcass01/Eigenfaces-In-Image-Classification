@@ -71,29 +71,119 @@ Section  <a href="#analysis">V</a> presents analysis of the classification model
 This paper concludes with a discussion of the results and future work in sections <a href="#discussion">VI</a> and <a href="#future-work">VII</a> respectively.
 
 ## Amsterdam Dynamic Facial Expression Set
-<!-- The ADFES dataset was developed by the University of Amsterdam's Amsterdam Interdisciplinary Centre for Emotion (AICE) \cite{adfes}.
+The ADFES dataset was developed by the University of Amsterdam's Amsterdam Interdisciplinary Centre for Emotion (AICE) [7].
 The ADFES dataset includes expressions displayed by 22 models from Northern-European and Mediterranean locations.
 There are ten emotions included in ADFES dataset: anger, contempt, disgust, embarrassment, fear, joy, neutral, pride, sadness, and surprise.
 The ADFES dataset includes both videos and still images.
 Each media is labeled with a gender: male or female.
 This paper will utilize the 217 still images from the ADFES dataset only.
-Figure \ref{fig:ExampleImage} includes an example of a still image from the ADFES dataset.
-Table \ref{table:Target Class Distributions} shows the number of classes per target in the dataset and the images per class.
-Each image has a width of 720, a height of 576, and three 8-bit color channels: red, green, and blue. -->
+Figure 1 includes an example of a still image from the ADFES dataset.
+Table 1 shows the number of classes per target in the dataset and the images per class.
+Each image has a width of 720, a height of 576, and three 8-bit color channels: red, green, and blue.
+
+<center>
+<p>
+  <img src="docs/figures/Image Example.PNG" style="width:360px;height:288px;">
+</p>
+
+<p>
+  <em>Fig. 1: ADFES Example Image with targets: Mediterranean, Female and Joy</em>
+</p>
+</center>
+
+<center>
+
+| Target               | Class Count | Images Per Class                            |
+|----------------------|-------------|---------------------------------------------|
+| Geographic Tag       | 2           | {Northern European: 120, Mediterranean: 97} |
+| Gender Tag           | 2           | {Male: approx. 120, Female: approx. 100}    |
+| Model Identification | 22          | approx. 10                                  |
+| Emotion              | 10          | approx. 22                                  |
+
+<p>
+  <em>Table 1: Target Class Distributions</em>
+</p>
+</center>
 
 ## Model
 
+### Features and Targets
+
+### Principal Component Analysis
+
+### Support Vector Machine
+
 ## Implementation
 
+### Data Processing
+
+### Model Impelementation
+
 ## Analysis
+
+### Eigenface Analysis
+
+### Classification Analysis
 
 ## Discussion
 
 ## Future Work
+The choice to focus on still images was secondary to schedule.
+The model's performance on classifying emotions could be greatly improved by increasing the number of images per emotion.
+Images could be extracted from the video data in the ADFES dataset.
+Images could also be generated using data augmentation methods [11].
+The model would also benefit from diverse camera angles.
+
+The ADFES dataset included images with participants from two geographic tags: Northern European and Mediterranean.
+It is important to understand the populations represented in a dataset to understand what populations the model has been validated on.
+For consistent performance across larger populations, there needs to be more diversity in the training and validation sets [12].
 
 ## Appendix
 
+<center>
+<p>
+  <img src="docs/figures/eigenface_analysis_10_125.png">
+</p>
+
+<p>
+  <em>Fig. 5: Eigenface Efficacy Analysis (10-125 eigenfaces). The x-axis of each plot is the number of eigenfaces used in the training. The left y-axis for each plot is the average weighted accuracy over 5 tests. The right y-axis for each plot is the total explained variance of the eigenfaces used in the training.</em>
+</p>
+</center>
+
+<center>
+<p>
+  <img src="docs/figures/geographic_tag_cm.png">
+</p>
+
+<p>
+  <em>Fig. 6: Geographic Tag Confusion Matrices.</em>
+</p>
+</center>
+
+<center>
+<p>
+  <img src="docs/figures/gender_tag_cm.png">
+</p>
+
+<p>
+  <em>Fig. 7: Gender Tag Confusion Matrices.</em>
+</p>
+</center>
+
+<center>
+<p>
+  <img src="docs/figures/model_id_tag_cm.png">
+</p>
+
+<p>
+  <em>Fig. 8: Model Identification Confusion Matrices. Only 20 of the 22 model identities shown. The remaining 2
+confusion matrices are the same as those shown.</em>
+</p>
+</center>
+
+
 ## Acknolwedgements
+This work was performed as a final paper for the Mathematical Methods for Engineers class at Johns Hopkins University taught by Professor George Nakos.
 
 ## References
 
