@@ -142,18 +142,18 @@ As previously mentioned, each image begins with shape ($576\ height$, $720\ widt
 The images are first flattened as shown in equation 2.
 
 <em>Equation 2:</em>
-$$
+```math
   I(i)_{flat}=
   \begin{bmatrix} r_{(0,0)} & g_{(0,0)} & b_{(0,0)} & \dots & r_{(0,719)} & g_{(0,719)} & b_{(0,719)} \dots r_{(575,719)} & g_{(575,719)} & b_{(575,719)}
   \end{bmatrix}
-$$
+```
 
 The flattened images are then stacked on top of each other to create a matrix of features as shown in equation 3.
 
 <em>Equation 3:</em>
-$$
+```math
   features=\begin{bmatrix} I(0)_{flat} \\ I(1)_{flat} \\ \dots \\ I(216)_{flat} \end{bmatrix},\ targets=\begin{bmatrix} T(0) \\ T(1) \\ \dots \\ T(216) \end{bmatrix}
-$$
+```
 
 The final feature matrix will be of shape $(217, 1,244,160)$.
 The target matrix is created by retrieving the column matching the target data.
@@ -177,35 +177,35 @@ Each face image $I(i)$ will be represented as a vector $\varGamma_n$.
 The vectors $\varGamma_n$ will then be used to calculate the average matrix $\Psi$ of each component as shown in equation 4.
 
 <em>Equation 4:</em>
-$$
+```math
   \Psi = \frac{1}{N} \sum_{n=1}^{M} \varGamma_n  
-$$
+```
 
 The resulting matrix will then be subtracted from each face image and stored in the variable $\Phi_n$ as shown in equation 5.
 $\Phi_n$is used to calculate the covariance matrix $C$ as shown in equation 6.
 
 <em>Equation 5:</em>
-$$
+```math
   \Phi_n = \varGamma_n - \Psi
-$$
+```
 
 <em>Equation 6:</em>
-$$
+```math
   C = \frac{1}{M} \sum_{n=1}^{M} \Phi_n \Phi_n^T = A A^T,\ \text{where}\ A = [\Phi_1, \Phi_2, \dots, \Phi_M]
-$$
+```
 
 The covariance matrix has the eigenfaces $u_i$ and their respective eigenvalues $v_i$ as shown in equation 7, where $u_i$ is solved with equation 8.
 Finally, it is important to normalize $u_i$ such that $||u_i||=1$.
 
 <em>Equation 7:</em>
-$$
+```math
   A^T A v_i = u_i v_i
-$$
+```
 
 <em>Equation 8:</em>
-$$
+```math
   u_i = \sum_{k=1}^{M} v_{lk} \Phi_k,\ \text{where}\ l = 1, 2, \dots, M
-$$
+```
 
 The training features and validation features after the eigenface transform were of shapes (172, $E_{count}$) and (44, $E_{count}$) respectively where $E_{count}$ is the number of components (eigenvectors or eigenfaces) from PCA retained.
 As described in Section <a href="#classification-analysis">VI.B</a>, different values of $E_{count}$ were chosen for different targets.
@@ -218,38 +218,38 @@ The closest datapoints are also called ``support vectors''.
 SVM classifiers are based on the class of hyperplanes shown in equation 9.
 
 <em>Equation 9:</em>
-$$
+```math
   (w \bullet x) + b = 0,\ w \in \Re^N,\ b\in \Re
-$$
+```
 
 The optimal hyperplane can be found by solving a constrained optimization problem whose solution $w$ has an expansion shown in equation 10 where $x_i$ is one training example.
 Solutions to SVMs can be generated using quadratic programming.
 
 <em>Equation 10:</em>
-$$
+```math
   w=\sum_{i = 1}^{N} v_i x_i 
-$$
+```
 
 SVMs perform a nonlinear separation from the input space into a higher-dimensional ``feature space'' $F$ as shown in equation 11.
 The mapping performed by the SVM is called the kernel function $K(x, y)$.
 This paper will focus on the linear kernel defined by equation 12.
 
 <em>Equation 11:</em>
-$$
+```math
   \Phi : \Re^N \rightarrow F
-$$
+```
 
 <em>Equation 12:</em>
-$$
+```math
   K(x, y) = \Phi (x) \bullet \Phi (y)
-$$
+```
 
 The decision function for the SVM is shown in equation 13 where $v_i$ are the parameters calculated using quadratic programming.
 
 <em>Equation 13:</em>
-$$
+```math
   f(x) = sign\left(\sum_{i = 1}^{l} v_i \bullet k(x, x_i) + b \right)
-$$
+```
 
 ## Implementation
 
