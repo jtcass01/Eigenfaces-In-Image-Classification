@@ -28,11 +28,25 @@ Authors: Jacob Taylor Cassady and Dimitri Medina
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
+    <li><a href="#nomenclature">Nomenclature</a></li>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#amsterdam-dynamic-facial-expression-set">Amsterdam Dynamic Facial Expression Set</a></li>
     <li><a href="#model">Model</a></li>
+    <ol>
+      <li><a href="#features-and-targets">Features and Targets</a></li>
+      <li><a href="#principal-component-analysis">Principal Component Analysis</a></li>
+      <li><a href="#support-vector-machine">Support Vector Machine</a></li>
+    </ol>
     <li><a href="#implementation">Implementation</a></li>
+    <ol>
+      <li><a href="#data-processing">Data Processing</a></li>
+      <li><a href="#model-implementation">Model Implementation</a></li>
+    </ol>
     <li><a href="#analysis">Analysis</a></li>
+    <ol>
+      <li><a href="#eigenface-analysis">Eigenface Analysis</a></li>
+      <li><a href="#model-analysis">Model Analysis</a></li>
+    </ol>
     <li><a href="#discussion">Discussion</a></li>
     <li><a href="#future-work">Future Work</a></li>
     <li><a href="#acknolwedgements">Acknolwedgements</a></li>
@@ -64,11 +78,11 @@ SVMs suffer high computational costs when the number of features is large.
 Using eigenvectors calculated with PCA has been shown to work well with Support Vector Machines (SVMs) for classification in a variety of domains [4-6].
 
 This paper focuses on analyzing the efficacy of using eigenfaces when performing image classification of the Amsterdam Dynamic Facial Expression Set (ADFES) dataset using SVMs.
-Section <a href="#amsterdam-dynamic-facial-expression-set">II</a> provides a description of the ADFES dataset.
-Section <a href="#model">III</a> introduces the model used for image classification including the mathematics of eigenfaces and SVMs.
-Section <a href="#model">IV</a> describes the implementation of a classification model using eigenfaces and SVMs with the Python programming language.
-Section  <a href="#analysis">V</a> presents analysis of the classification model including the efficacy of using eigenfaces in image classification.
-This paper concludes with a discussion of the results and future work in sections <a href="#discussion">VI</a> and <a href="#future-work">VII</a> respectively.
+Section <a href="#amsterdam-dynamic-facial-expression-set">III</a> provides a description of the ADFES dataset.
+Section <a href="#model">IV</a> introduces the model used for image classification including the mathematics of eigenfaces and SVMs.
+Section <a href="#model">V</a> describes the implementation of a classification model using eigenfaces and SVMs with the Python programming language.
+Section  <a href="#analysis">VI</a> presents analysis of the classification model including the efficacy of using eigenfaces in image classification.
+This paper concludes with a discussion of the results and future work in sections <a href="#discussion">VII</a> and <a href="#future-work">VIII</a> respectively.
 
 ## Amsterdam Dynamic Facial Expression Set
 The ADFES dataset was developed by the University of Amsterdam's Amsterdam Interdisciplinary Centre for Emotion (AICE) [7].
@@ -106,12 +120,136 @@ Each image has a width of 720, a height of 576, and three 8-bit color channels: 
 </center>
 
 ## Model
+Image classification will be accomplished using eigenfaces and SVMs.
+Calculation of eigenfaces, or more generally eigenvectors, will be calculated using Principal Component Analysis (PCA).
+Section <a href="#features-and-targets">IV.A</a> describes the shapes of the feature and target matrices before the eigenface dimensionality reduction described in Section <a href="#principal-component-analysis">IV.B</a>.
+Section <a href="#support-vector-machine">IV.C</a> describes the mathematics of a SVM.
 
 ### Features and Targets
 
+Each image $I$ of the dataset follows the representation shown in equation 1.
+As previously mentioned, each image begins with shape ($576\ height$, $720\ width$, $3\ color\ channels$).
+
+<em>Equation 1:</em>
+$$
+  I(i)=\begin{bmatrix} (r_{(0,0)}, g_{(0,0)}, b_{(0,0)}) & (r_{(0,1)}, g_{(0,1)}, b_{(0,1)}) & \dots & (r_{(0,719)}, g_{(0,719)}, b_{(0,719)}) \\
+    (r_{(1,0)}, g_{(1,0)}, b_{(1,0)}) & (r_{(1,1)}, g_{(1,1)}, b_{(1,1)}) & \dots & (r_{(1,719)}, g_{(1,719)}, b_{(1,719)}) \\
+    \dots & \dots & \dots & \dots \\
+    (r_{(575,0)}, g_{(575,0)}, b_{(575,0)}) & (r_{(575,1)}, g_{(575,1)}, b_{(575,0)}) & \dots & (r_{(575,719)}, g_{(575,719)}, b_{(575,719)}) \\
+  \end{bmatrix}
+$$
+
+The images are first flattened as shown in equation 2.
+
+<em>Equation 2:</em>
+$$
+  I(i)_{flat}=
+  \begin{bmatrix} r_{(0,0)} & g_{(0,0)} & b_{(0,0)} & \dots & r_{(0,719)} & g_{(0,719)} & b_{(0,719)} \dots r_{(575,719)} & g_{(575,719)} & b_{(575,719)}
+  \end{bmatrix}
+$$
+
+The flattened images are then stacked on top of each other to create a matrix of features as shown in equation 3.
+
+<em>Equation 3:</em>
+$$
+  features=\begin{bmatrix} I(0)_{flat} \\ I(1)_{flat} \\ \dots \\ I(216)_{flat} \end{bmatrix},\ targets=\begin{bmatrix} T(0) \\ T(1) \\ \dots \\ T(216) \end{bmatrix}
+$$
+
+The final feature matrix will be of shape $(217, 1,244,160)$.
+The target matrix is created by retrieving the column matching the target data.
+If the target data is in the form of a label, each string is encoded into an integer matching the class.
+In the example of gender, males would be encoded to 1 and female encoded to 2.
+The final target matrix will be of shape $(217, 1)$.
+
+Before feeding into the model for training, the data was randomly shuffled and then split into training and validation sets.
+With an 80-20 training and validation split, $172$ images and associated targets were placed in the training set and 44 images and associated targets were placed in test set.
+The training features and validation features were of shapes $(172, 1,244,160)$ and $(44, 1,244,160)$ respectively.
+The training targets and validation targets were of shapes $(172, 1)$ and $(44, 1)$ respectively.
+
 ### Principal Component Analysis
 
+PCA can be used to achieve dimensionality reduction while maintaining a representation of the data [1].
+PCA uses a subset of eigenvectors, also known in facial recognition as ``eigenfaces'', to represent the data in a lower dimensionality space.
+Eigenvectors will each have an associated eigenvalue which is a scalar and is a measure of the eigenvector prominence in the dataset. 
+
+To calculate the eigenfaces, processing of the face images and the calculation of the covariance matrix must be done.
+Each face image $I(i)$ will be represented as a vector $\varGamma_n$. 
+The vectors $\varGamma_n$ will then be used to calculate the average matrix $\Psi$ of each component as shown in equation 4.
+
+<em>Equation 4:</em>
+$$
+  \Psi = \frac{1}{N} \sum_{n=1}^{M} \varGamma_n  
+$$
+
+The resulting matrix will then be subtracted from each face image and stored in the variable $\Phi_n$ as shown in equation 5.
+$\Phi_n$is used to calculate the covariance matrix $C$ as shown in equation 6.
+
+<em>Equation 5:</em>
+$$
+  \Phi_n = \varGamma_n - \Psi
+$$
+
+<em>Equation 6:</em>
+$$
+  C = \frac{1}{M} \sum_{n=1}^{M} \Phi_n \Phi_n^T = A A^T,\ \text{where}\ A = [\Phi_1, \Phi_2, \dots, \Phi_M]
+$$
+
+The covariance matrix has the eigenfaces $u_i$ and their respective eigenvalues $v_i$ as shown in equation 7, where $u_i$ is solved with equation 8.
+Finally, it is important to normalize $u_i$ such that $||u_i||=1$.
+
+<em>Equation 7:</em>
+$$
+  A^T A v_i = u_i v_i
+$$
+
+<em>Equation 8:</em>
+$$
+  u_i = \sum_{k=1}^{M} v_{lk} \Phi_k,\ \text{where}\ l = 1, 2, \dots, M
+$$
+
+The training features and validation features after the eigenface transform were of shapes (172, $E_{count}$) and (44, $E_{count}$) respectively where $E_{count}$ is the number of components (eigenvectors or eigenfaces) from PCA retained.
+As described in Section <a href="#classification-analysis">VI.B</a>, different values of $E_{count}$ were chosen for different targets.
+A higher $E_{count}$ value maps to lower dimensionality reduction and higher explained variance of the input feature space. 
+
 ### Support Vector Machine
+SVMs are supervised learning algorithms designed to find the optimal hyperplane that maximizes the margin between the closest data points of opposite classes [3].
+Multiclass classification can be achieved using a One-to-One or a One-to-Rest approach.
+The closest datapoints are also called ``support vectors''.
+SVM classifiers are based on the class of hyperplanes shown in equation 9.
+
+<em>Equation 9:</em>
+$$
+  (w \bullet x) + b = 0,\ w \in \Re^N,\ b\in \Re
+$$
+
+The optimal hyperplane can be found by solving a constrained optimization problem whose solution $w$ has an expansion shown in equation 10 where $x_i$ is one training example.
+Solutions to SVMs can be generated using quadratic programming.
+
+<em>Equation 10:</em>
+$$
+  w=\sum_{i = 1}^{N} v_i x_i 
+$$
+
+SVMs perform a nonlinear separation from the input space into a higher-dimensional ``feature space'' $F$ as shown in equation 11.
+The mapping performed by the SVM is called the kernel function $K(x, y)$.
+This paper will focus on the linear kernel defined by equation 12.
+
+<em>Equation 11:</em>
+$$
+  \Phi : \Re^N \rightarrow F
+$$
+
+<em>Equation 12:</em>
+$$
+  K(x, y) = \Phi (x) \bullet \Phi (y)
+$$
+
+The decision function for the SVM is shown in equation 13 where $v_i$ are the parameters calculated using quadratic programming.
+
+<em>Equation 13:</em>
+$$
+  f(x) = sign\left(\sum_{i = 1}^{l} v_i \bullet k(x, x_i) + b \right)
+$$
 
 ## Implementation
 
