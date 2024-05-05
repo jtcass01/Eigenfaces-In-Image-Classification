@@ -182,7 +182,7 @@ The vectors $\varGamma_n$ will then be used to calculate the average matrix $\Ps
 ```
 
 The resulting matrix will then be subtracted from each face image and stored in the variable $\Phi_n$ as shown in equation 5.
-$\Phi_n$is used to calculate the covariance matrix $C$ as shown in equation 6.
+$\Phi_n$ is used to calculate the covariance matrix $C$ as shown in equation 6.
 
 <em>Equation 5:</em>
 ```math
