@@ -131,13 +131,13 @@ Each image $I$ of the dataset follows the representation shown in equation 1.
 As previously mentioned, each image begins with shape ($576\ height$, $720\ width$, $3\ color\ channels$).
 
 <em>Equation 1:</em>
-$$
+```math
   I(i)=\begin{bmatrix} (r_{(0,0)}, g_{(0,0)}, b_{(0,0)}) & (r_{(0,1)}, g_{(0,1)}, b_{(0,1)}) & \dots & (r_{(0,719)}, g_{(0,719)}, b_{(0,719)}) \\
     (r_{(1,0)}, g_{(1,0)}, b_{(1,0)}) & (r_{(1,1)}, g_{(1,1)}, b_{(1,1)}) & \dots & (r_{(1,719)}, g_{(1,719)}, b_{(1,719)}) \\
     \dots & \dots & \dots & \dots \\
     (r_{(575,0)}, g_{(575,0)}, b_{(575,0)}) & (r_{(575,1)}, g_{(575,1)}, b_{(575,0)}) & \dots & (r_{(575,719)}, g_{(575,719)}, b_{(575,719)}) \\
   \end{bmatrix}
-$$
+```
 
 The images are first flattened as shown in equation 2.
 
