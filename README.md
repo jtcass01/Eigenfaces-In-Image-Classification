@@ -289,7 +289,7 @@ label_encoder = LabelEncoder()
 targets: array = label_encoder.fit_transform(targets)
 ```
 
-### Model Impelementation
+### Model Implementation
 To calculate the eigenvalues of the data, sci-kit learn's Principal Component Analys (PCA) class was used.
 The singular value decomposition solver was set to ``randomized'' - meaning it calculated the eigenfaces using the method described by Halko et al. [10].
 The sci-kit learn SVC class was used for support vector machine classification.
