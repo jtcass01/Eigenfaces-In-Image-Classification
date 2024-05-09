@@ -252,18 +252,168 @@ The decision function for the SVM is shown in equation 13 where $v_i$ are the pa
 ```
 
 ## Implementation
+To analyze the efficacy of eigenfaces for maintaining model performance while reducing the dimensionality of the data, the model described in section <a href="#analysis">IV</a> was implemented in Python 3.8.
+Table 3 lists the 3rd party libraries used in the implementation.
+Section <a href="#data-processing">V.A</a> describes the data preprocessing steps taken before feeding the data into the model.
+Section <a href="#model-implementation">V.B</a> describes the implementation of the model.
 
 ### Data Processing
 
+Images downloaded from the ADFES dataset were placed in two directories named after the geographic tag.
+Files from the ADFES dataset included the regional model identification, emotion, and gender tag in the file name.
+A global model identification value was calculated using equation 14 where $ID_{Max}$ is the largest regional model id in the dataset, $G$ is an enumeration dependent on the geographic tag on the image, and $S$ is an enumeration dependent on the gender tag on the image.
+A python script was written to place image data into a pandas [8] DataFrame with rows representing an image with associated metadata and columns representing the geographic tag, model identification, emotion, gender tag, and pixel values.
+After preprocessing the data, the pandas data structure was stored using a Python pickle file.
+
+<em>Equation 14:</em>
+```math
+  ModelID_{Global}= ModelID_{Regional} + (ID_{Max}+1)(G + 2 S)
+```
+
+To format the data for usage by the model, pixel data was flattened for each image into a single row as shown in Equation 2.
+Each row of image data was then stacked on top of each other to form a matrix of features of shape (217, 1,244,160).
+The training column was extracted from the pandas DataFrame and formatted as a NumPy array of shape (217,1).
+The sci-kit learn [9] LabelEncoder preprocessing class was used to convert string labels into integer values.
+Data was then randomly shuffled and split into train and validation sets using sci-kit learn's train\_test\_split method.
+
+```python
+from sklearn.preprocessing import LabelEncoder
+
+# Flatten images and stack them to make the image matrix
+image_data: array = array(df['image'].apply(lambda img: array(img).flatten()).to_list())
+# Grab a columb of the data for the targets
+targets: array = array(df[target_label].to_list()).reshape(-1, 1)
+
+# Convert labels to integers
+label_encoder = LabelEncoder()
+targets: array = label_encoder.fit_transform(targets)
+```
+
 ### Model Impelementation
+To calculate the eigenvalues of the data, sci-kit learn's Principal Component Analys (PCA) class was used.
+The singular value decomposition solver was set to ``randomized'' - meaning it calculated the eigenfaces using the method described by Halko et al. [10].
+The sci-kit learn SVC class was used for support vector machine classification.
+The regularization parameter $C=3$ and a linear kernel were used.
+
+```python
+from sklearn.decomposition import PCA
+from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+# Split train and validation data
+train_features, test_features, train_targets, test_targets = train_test_split(image_data, targets, stratify=targets, test_size=0.2)
+
+# Perform PCA on the training data to get eigenfaces
+dataset_pca = PCA(svd_solver='randomized', n_components=eigenface_count, whiten=True)
+train_features_pca = dataset_pca.fit_transform(train_features)
+
+# Train the support vector machine model
+model = SVC(kernel='linear', C=3.0)
+model.fit(train_features_pca, train_targets)
+
+# Evaluate the model
+predictions: array = model.predict(dataset_pca.transform(test_features))
+
+# Generate classification report
+report = classification_report(test_targets, predictions, target_names=label_encoder.classes_, output_dict=True)
+```
 
 ## Analysis
+The primary benefit of using eigenfaces is dimensionality reduction, therefore the analysis section focuses on the trade off between using eigenfaces to reduce datasize and maintaining model performance.
+Section <a href="#eigenface-analysis">VI.A</a> provides analysis of Eigenface Count's ($E_{count}$) effect on model training performance.
+Section <a href="#classification-analysis">VI.B</a> presents the performance of the best model for each target in the ADFES dataset with the largest amount of dimensionality reduction.
 
 ### Eigenface Analysis
+As previously stated, the number of eigenfaces retained from PCA determines the amount of explained variance represented by the eigenface features when compared to the input features.
+Figure 2 shows the performance of the SVM on each target with $E_{count}$ values ranging from [2, 10].
+This analysis was performed 5 times for each data point.
+The left Y-axis represents the accuracies of the models.
+The center blue dots represent the average model accuracy over the five tests while the blue lines represent the standard deviations of the accuracies.
+The purple lines represent the amount of explained variance in the eigenface features used in training the model.
+Figure 5 shows the performance of the SVM on each target with $E_{count}$ values ranging from [10, 125].
+
+<center>
+<p>
+  <img src="docs/figures/eigenface_analysis_2_10.png">
+</p>
+
+<p>
+  <em>Fig. 2: Eigenface Efficacy Analysis (2-10 eigenfaces). The x-axis of each plot is the number of eigenfaces used in the training. The left y-axis for each plot is the average weighted accuracy over 5 tests. The right y-axis for each plot is the total explained variance of the eigenfaces used in the training.</em>
+</p>
+</center>
+
+Analyzing the eigenfaces directly can provide valuable insight into the dataset.
+As shown in Figure 2, the top 9 eigenfaces shown in Figure 3 represent more than 65\% of the explained variance in the input features.
+
+<center>
+<p>
+  <img src="docs/figures/top_9_eigenfaces.png">
+</p>
+
+<p>
+  <em>Fig. 3: Top 9 Eigenfaces.</em>
+</p>
+</center>
 
 ### Classification Analysis
+Before performing PCA, features and targets were randomly shuffled.
+80\% of the data or 172 images and associated targets were placed in training set.
+20\% of the data or 44 images and associated targets were placed in test set.
+Models were trained to classify each target in the dataset: geographic tag, gender tag, model identification, and emotion.
+Each model was trained for a maximum of 5 times and the best outcome was retained.
+The $F_1$ score, also known as the harmonic mean of the precision and recall, is the performance metric chosen for comparing models.
+Equation 15 for $F_1$ score can be found below.
+
+<em>Equation 15:</em>
+```math
+  F_1=2\frac{precision \bullet  recall}{precision + recall}
+```
+
+Table 2 presents the performance of the model on each target.
+Eigenface count ($E_{count}$) represents the number of eigenfaces with the highest explained variances retained after performing PCA.
+The explained variance column represents the sum of explained variances of all eigenfaces used in the target's model.
+$E_{count}$ values were chosen analytically from inspecting Figure 5 and selecting the smallest $E_{count}$ with the best performance.
+Data size reduction was calculated with the formula shown in equation 16.
+
+<em>Equation 16:</em>
+```math
+  \texttt{Data Size Reduction} = \frac{size(EigenfaceFeatures) - size(Features)}{size(Features)}\bullet 100\%
+```
+
+<center>
+
+| Target               | $E_count$ | Explained Variance | Data Size Reduction | Best $F_1$ Score |
+|----------------------|-----------|--------------------|---------------------|------------------|
+| Geographic Tag       | 50        | approx. 87\%       | -99.9960\%          | 1.00             |
+| Gender Tag           | 65        | approx. 90\%       | -99.9948\%          | 1.00             |
+| Model Identification | 50        | approx. 87\%       | -99.9960\%          | 1.00             |
+| Emotion              | 75        | approx. 92\%       | -99.9940\%          | 0.293            |
+
+<p>
+  <em>Table 2: Best Model Performance</em>
+</p>
+</center>
+
+Confusion matrices were also generated to provide insight into the model's performance on the validation set per class of the target.
+The confusion matrices for geographic tag, gender, model identification, and emotion can be found in Figures 6, 7, 8, and 9 respectively.
 
 ## Discussion
+Eigenfaces retain high classification accuracy while achieving dimensionality reduction.
+Figure 2 shows the performance of the model on each target with 2-10 eigenfaces and Figure 5 shows the performance of the model on each target with 10-125 eigenfaces.
+With only the top nine eigenfaces, shown in Figure 3, the model was able to achieve an $F_1$ Score of more than 90\% on geographic tag and model identification targets.
+Table 2 shows a perfect $F_1$ Score was achieved on 3 of the 4 targets with a data size reduction of more than 99.99\% from using eigenfaces.
+
+High classification accuracy was achieved on all targets except emotion. 
+Table 2 shows the best performance of the support vector machine classifier on each target.
+The confusion matrix for emotion shown in Figure 4 provides insight into the model's performance issues with emotion classification.
+The model is over-classifying for anger, contempt, disgust, embarrassment, and neutral while under-classifying for emotions like joy, pride, sadness, and surprise.
+The poor performance of the model on classifying emotion is possibly due to the relatively low amount of data per emotion class in the ADFES still images.
+
+The ADFES dataset was chosen to test the benefit of eigenfaces because of the low development cost for preprocessing the data.
+Additionally, the ADFES dataset includes still images that are centered on the model's face.
+The consistent positioning provides good insight into what an eigenface, and more generally what an eigenvector, represents in the context of PCA.
+Because still, well-formatted, images were used to train and validate the model described in this paper is unlikely to perform well in computer vision systems that have dynamic angles on their subject.
 
 ## Future Work
 The choice to focus on still images was secondary to schedule.
